@@ -1,4 +1,4 @@
-const number = document.getElementById('number');
+const span = document.getElementById('number');
 const button = document.getElementById('button');
 
 function btn () {
@@ -9,16 +9,16 @@ function btn () {
     let random = () => {
 
         let randomNumber = Math.ceil(Math.random() * 13);
-        if (number.innerText && number.innerText == randomNumber) {
+        if (span.innerText && span.innerText == randomNumber) {
             random();
         } else if (randomNumber <= 9) {
-            number.innerText = '0' + randomNumber;
+            span.innerText = '0' + randomNumber;
         } else {
-            number.innerText = randomNumber;
+            span.innerText = '\u00A0' + randomNumber;
         }
     }
     
-    let interval = setInterval(random, 127);
+    let interval = setInterval(random, 147);
     let stop = () => {
         clearInterval(interval);
     }
