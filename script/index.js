@@ -4,6 +4,7 @@ const button = document.getElementById('button');
 function btn () {
 
     let random = () => {
+
         let randomNumber = Math.ceil(Math.random() * 13);
         if (number.innerText && number.innerText == randomNumber) {
             random();
