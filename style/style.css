@@ -8,24 +8,77 @@
     font-family: 'Alegreya', serif !important;
 }
 
-html {
-    height: 100%;
-}
-
 body {
-    height: 100%;
-    display: block;
     background-color: rgb(0, 0, 0);
+    overflow: hidden;
 }
 
 header {
+    background-color: rgb(0, 0, 0);
+    position: fixed;
+    width: 100%;
+    height: 9vh;
+    padding-left: 1.1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.burguer{
+    display: block;
+    cursor: pointer;
+    width: 2.7em;
+}
+
+.burguer div{
+    background-color: rgb(255, 235, 205);
+    width: 1.9em;
+    height: 0.2em;
+    margin: 7px;
+    transition: all 0.7s ease;
+}
+
+.nav{
+    background-color: rgb(255, 235, 205);
+    height: 93vh;
+    position: absolute;
+    margin-top: 9vh;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in;
+}
+
+.nav-active{
+    transform: translateX(0%);
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 3.3vh;  
+}
+
+li{
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 2em 1.4em 0em 1.4em;
+    opacity: 0;
+}
+
+a{
+    cursor: pointer;
+}
+
+h1 {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding-top: 6em;
+    padding-top: 3.2em;
     color: rgb(255, 255, 255);
-    font-size: 1.2em;
-    letter-spacing: 3px;
+    font-size: 2.2em;
+    letter-spacing: 2.7px;
+    word-spacing: 5px;
 }
 
 section {
@@ -40,6 +93,7 @@ section {
 }
 
 button {
+    outline: none;
     background-color: rgb(255, 255 , 255);
     color: rgb(0, 0, 0);
     font-size: 1em;
@@ -47,11 +101,12 @@ button {
     height: 2em;
     font-weight: 646;
     text-decoration: none;
-    border: none;
     text-align: center;
     border: solid 1.7px transparent;
     border-radius: 7px;
     font-family: 'Alegreya', serif;
+    letter-spacing: 1px;
+    word-spacing: 1px;
 }
 
 button:active {
@@ -60,9 +115,9 @@ button:active {
 }
 
 button:hover {
-    color: blanchedalmond;
+    color: rgb(255, 235, 205);
     border-color: currentColor;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     cursor: pointer;
 }
 
@@ -71,11 +126,44 @@ button:hover {
     margin-left: 2.646em;
     font-size: 2em;
     color: rgb(255, 255, 255);
+    letter-spacing: 0.7px;
 }
 
 .number {
     display: inline-block;
     margin-left: 0.7em;
     width: 1em;
-    border-bottom: 3px solid blanchedalmond;
+    border-bottom: 3px solid rgb(255, 235, 205);
+}
+
+@keyframes fade{
+    from {
+     opacity: 0;
+    }
+
+    to{
+     opacity: 1;
+    }
+}
+
+@keyframes fade-out{
+    from {
+     opacity: 1;
+    }
+
+    to{
+     opacity: 0;
+    }
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2{
+    opacity: 0;
+}
+
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px, -6px);
 }
